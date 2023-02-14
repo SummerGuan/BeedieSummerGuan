@@ -13,7 +13,10 @@ index_col =['Date'] )
 begDate = df.index.min()
 endDate = df.index.max()
 
-pickStart = st.date_input("Pick start date:",begDate)
+minDateDropdown = pd.to_datetime('2010-01-01')
+
+
+pickStart = st.date_input("Pick start date:",begDate,min_value=minDateDropdown)
 pickEnd = st.date_input("Pick start date:",endDate)
 
 st.write(df.loc[pickStart:pickEnd])
